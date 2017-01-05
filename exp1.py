@@ -24,8 +24,8 @@ naFixedSoaList = [
 ]
 cueDuration = .050
 targetDuration = 1.000
-ttoaMin = 2.000
-ttoaMean = 3.00
+ttoaMin = 3.000
+ttoaMean = 4.00
 ttoaMax = 10.00
 
 blocksPerSoa = 3
@@ -589,8 +589,8 @@ def runBlock(block,soaType,soa=None):
 	drawRing(xOffset=-offsetSize,size=boxSize,thickness=boxThickness,color=.1)
 	drawRing(xOffset=offsetSize,size=boxSize,thickness=boxThickness,color=.1)
 	stimDisplay.refresh() #should block until it's actually drawn
-	
-	#get the trial start time 
+
+	#get the trial start time
 	blockStartTime = getTime()-(1.000/60.0)
 
 	#compute stim times
@@ -763,37 +763,37 @@ else:
 	if int(subInfo[0])%12==0:
 		soaTypeList = [soaTypeList[0],soaTypeList[1]]
 		fixedSoaList = [fixedSoaList[0],fixedSoaList[1],fixedSoaList[2]]
-	elif int(subInfo[0])%12==1:	
+	elif int(subInfo[0])%12==1:
 		soaTypeList = [soaTypeList[1],soaTypeList[0]]
 		fixedSoaList = [fixedSoaList[0],fixedSoaList[1],fixedSoaList[2]]
 	elif int(subInfo[0])%12==2:
 		soaTypeList = [soaTypeList[0],soaTypeList[1]]
 		fixedSoaList = [fixedSoaList[0],fixedSoaList[2],fixedSoaList[1]]
-	elif int(subInfo[0])%12==3:	
+	elif int(subInfo[0])%12==3:
 		soaTypeList = [soaTypeList[1],soaTypeList[0]]
 		fixedSoaList = [fixedSoaList[0],fixedSoaList[2],fixedSoaList[1]]
 	elif int(subInfo[0])%12==4:
 		soaTypeList = [soaTypeList[0],soaTypeList[1]]
 		fixedSoaList = [fixedSoaList[1],fixedSoaList[0],fixedSoaList[2]]
-	elif int(subInfo[0])%12==5:	
+	elif int(subInfo[0])%12==5:
 		soaTypeList = [soaTypeList[1],soaTypeList[0]]
 		fixedSoaList = [fixedSoaList[1],fixedSoaList[0],fixedSoaList[2]]
 	elif int(subInfo[0])%12==6:
 		soaTypeList = [soaTypeList[0],soaTypeList[1]]
 		fixedSoaList = [fixedSoaList[1],fixedSoaList[2],fixedSoaList[0]]
-	elif int(subInfo[0])%12==7:	
+	elif int(subInfo[0])%12==7:
 		soaTypeList = [soaTypeList[1],soaTypeList[0]]
 		fixedSoaList = [fixedSoaList[1],fixedSoaList[2],fixedSoaList[0]]
 	elif int(subInfo[0])%12==8:
 		soaTypeList = [soaTypeList[0],soaTypeList[1]]
 		fixedSoaList = [fixedSoaList[2],fixedSoaList[0],fixedSoaList[1]]
-	elif int(subInfo[0])%12==9:	
+	elif int(subInfo[0])%12==9:
 		soaTypeList = [soaTypeList[1],soaTypeList[0]]
 		fixedSoaList = [fixedSoaList[2],fixedSoaList[0],fixedSoaList[1]]
 	elif int(subInfo[0])%12==10:
 		soaTypeList = [soaTypeList[0],soaTypeList[1]]
 		fixedSoaList = [fixedSoaList[2],fixedSoaList[1],fixedSoaList[0]]
-	elif int(subInfo[0])%12==11:	
+	elif int(subInfo[0])%12==11:
 		soaTypeList = [soaTypeList[1],soaTypeList[0]]
 		fixedSoaList = [fixedSoaList[2],fixedSoaList[1],fixedSoaList[12]]
 
@@ -803,7 +803,7 @@ else:
 # Run blocks
 ########
 
-messageViewingTime = showMessage('Press any key to begin practice.')			
+messageViewingTime = showMessage('Press any key to begin practice.')
 for soaType in soaTypeList:
 	for soa in fixedSoaList:
 		for block in range(blocksPerSoa):
@@ -819,7 +819,7 @@ for soaType in soaTypeList:
 			else:
 				messageViewingTime = showMessage('Take a break!\nWhen you are ready to resume the experiment, press any key.')
 	if soa!=soaTypeList[-1]:
-		messageViewingTime = showMessage('The timing will now change slightly.\n\nPress any key to begin practice with this new timing')			
+		messageViewingTime = showMessage('The timing will now change slightly.\n\nPress any key to begin practice with this new timing')
 
 messageViewingTime = showMessage('You\'re all done!\nPlease alert the person conducting this experiment that you have finished.')
 
